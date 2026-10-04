@@ -1,0 +1,317 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  background: #071018;
+  color: #e9f1f7;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  width: 240px;
+  background: #050b11;
+  border-right: 1px solid #17232d;
+  padding: 28px 18px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.logo span {
+  opacity: 0.5;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+nav a {
+  padding: 12px 14px;
+  border-radius: 9px;
+  color: #8393a1;
+  cursor: pointer;
+}
+
+nav a.active,
+nav a:hover {
+  background: #101d27;
+  color: white;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  max-width: 1500px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  color: #81909c;
+  margin-top: 8px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8fd6a6;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.status span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #62c782;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: #0c151e;
+  border: 1px solid #172530;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.stat-card span {
+  display: block;
+  color: #81909c;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.stat-card strong {
+  font-size: 28px;
+}
+
+.panel {
+  background: #0c151e;
+  border: 1px solid #172530;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.panel-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.panel-title h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.panel-title span {
+  color: #778895;
+  font-size: 13px;
+}
+
+.network-map {
+  min-height: 250px;
+  padding: 15px;
+  background: #071018;
+  border-radius: 10px;
+}
+
+.link {
+  padding: 10px;
+  color: #718391;
+  font-family: monospace;
+}
+
+.node-list {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.node {
+  border: 1px solid #233440;
+  border-radius: 10px;
+  padding: 14px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.node.online {
+  border-color: #28573a;
+}
+
+.node.offline {
+  border-color: #5c2c2c;
+  opacity: 0.7;
+}
+
+.node strong,
+.node small {
+  display: block;
+}
+
+.node small {
+  color: #748490;
+  margin-top: 4px;
+}
+
+button {
+  border: 0;
+  border-radius: 7px;
+  padding: 8px 11px;
+  cursor: pointer;
+  background: #182631;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button.primary {
+  background: #dce9f0;
+  color: #071018;
+  font-weight: 700;
+}
+
+.route-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+select {
+  background: #071018;
+  color: white;
+  border: 1px solid #293b47;
+  padding: 11px;
+  border-radius: 7px;
+}
+
+.route-result {
+  margin-top: 18px;
+  padding: 16px;
+  background: #071018;
+  border-radius: 8px;
+}
+
+.route-result div {
+  margin-top: 10px;
+  font-family: monospace;
+  color: #9fd5ff;
+}
+
+.route-result small {
+  display: block;
+  color: #718391;
+  margin-top: 7px;
+}
+
+.good {
+  color: #82d69b;
+}
+
+.danger {
+  color: #ef8b8b;
+}
+
+.table {
+  width: 100%;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns:
+    1fr 2fr 1fr 1fr;
+
+  gap: 15px;
+  padding: 13px 8px;
+  border-bottom: 1px solid #172530;
+}
+
+.table-head {
+  color: #718391;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 850px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    padding: 18px;
+  }
+
+  .stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .route-controls {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 500px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .table-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
