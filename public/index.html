@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Mesh Network</title>
+
+  <link
+    rel="stylesheet"
+    href="/style.css"
+  >
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div>
+      <h1>Mesh Network</h1>
+
+      <p>
+        Network Control Center
+      </p>
+    </div>
+
+    <div
+      id="connectionStatus"
+      class="status connecting"
+    >
+      ● CONNECTING
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- STATISTICS -->
+
+    <section class="stats">
+
+      <div class="card">
+        <span>Total Nodes</span>
+        <strong id="totalNodes">
+          0
+        </strong>
+      </div>
+
+      <div class="card">
+        <span>Online Nodes</span>
+        <strong id="onlineNodes">
+          0
+        </strong>
+      </div>
+
+      <div class="card">
+        <span>Offline Nodes</span>
+        <strong id="offlineNodes">
+          0
+        </strong>
+      </div>
+
+      <div class="card">
+        <span>Gateways</span>
+        <strong id="gateways">
+          0
+        </strong>
+      </div>
+
+    </section>
+
+
+    <!-- NETWORK -->
+
+    <section class="panel">
+
+      <div class="panelHeader">
+
+        <div>
+          <h2>Network Topology</h2>
+
+          <p>
+            Connected network nodes
+          </p>
+        </div>
+
+        <span id="linkCount">
+          0 links
+        </span>
+
+      </div>
+
+
+      <div
+        id="network"
+        class="network"
+      ></div>
+
+    </section>
+
+
+    <!-- ROUTE TEST -->
+
+    <section class="panel">
+
+      <h2>Route Tester</h2>
+
+      <p>
+        Find a route between two nodes.
+      </p>
+
+      <div class="routeControls">
+
+        <select id="fromNode">
+        </select>
+
+        <span>→</span>
+
+        <select id="toNode">
+        </select>
+
+        <button
+          onclick="findRoute()"
+        >
+          Find Route
+        </button>
+
+      </div>
+
+      <div
+        id="routeResult"
+        class="routeResult"
+      >
+        Select nodes and find a route.
+      </div>
+
+    </section>
+
+
+    <!-- NODES -->
+
+    <section class="panel">
+
+      <div class="panelHeader">
+
+        <div>
+          <h2>Nodes</h2>
+
+          <p>
+            Manage simulated network nodes.
+          </p>
+        </div>
+
+      </div>
+
+      <div
+        id="nodes"
+        class="nodes"
+      ></div>
+
+    </section>
+
+  </main>
+
+
+  <script src="/app.js"></script>
+
+</body>
+
+</html>
